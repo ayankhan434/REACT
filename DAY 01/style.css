@@ -1,0 +1,16 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+#box{
+    height: 400px;
+    width: 400px;
+    background-color: aquamarine;
+}
+#circle{
+    height:300px;
+    width: 300px;
+    background-color: rgb(139, 191, 115);
+    border-radius: 50%;
+}
