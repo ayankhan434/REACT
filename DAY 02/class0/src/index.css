@@ -1,0 +1,14 @@
+*{
+  background-color: rgba(193, 44, 44, 0.099);
+  margin: 0;
+  padding: 0;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+h1{
+  color: red;
+}
