@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+.warp-wrap{
+    position: flex;
+    inset:0;
+    overflow: hidden;
+}
+.warp-tittle{
+    font-family: serif;
+    font-size: 24px;
+    color:aliceblue;
+    position:fixed;
+    top: 8px ;
+    left:8px;
+    z-index: 10;
+    user-select: none;
+    pointer-events: none;
+
+}
+
+.warp-desc{
+    font-size: 0.75em;
+    margin: 6px 0 0;
+}
+.warp-canvas{
+    position: fixed;
+    inset:0;
+    background: #000;
+    display:block;
+    z-index: 0;
+
+}
