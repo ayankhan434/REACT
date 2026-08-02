@@ -3,6 +3,8 @@ import gsap from "gsap";
 import { ScrollTrigger, SplitText, ScrollSmoother } from "gsap/all";
 
 import Warp from "./components/Warp/Warp";
+import Cursor from "./ui/Cursor/Cursor";
+import Navbar from "./components/NavBar/NavBar";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, ScrollSmoother);
 
@@ -20,6 +22,10 @@ const App = () => {
   return (
     <>
       <Warp />
+      <Cursor />
+      <div id="smooth-wrapper">
+        <Navbar />
+      </div>
     </>
   );
 };

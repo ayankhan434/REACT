@@ -57,7 +57,7 @@ export default function WarpSpeed() {
       }
     };
 
-    const STAR_COUNT = 200;
+    const STAR_COUNT = 300;
     const stars = Array.from({ length: STAR_COUNT }, () => new Star());
 
     const onKeyDown = (e) => {
