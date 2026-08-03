@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RoomNest – Student Rooms in Meerut</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="logo">Room<span>Nest</span></div>
+  <div class="nav-links">
+    <a href="#listings">Browse Rooms</a>
+    <a href="#how">How it Works</a>
+    <a href="#list">List Your Room</a>
+  </div>
+  <div class="nav-actions">
+    <button class="btn btn-outline" id="loginBtn" onclick="openAuthModal('login')">Login</button>
+    <button class="btn btn-primary" onclick="openAuthModal('signup')">Sign Up</button>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()">☰</button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#listings" onclick="toggleMenu()">Browse Rooms</a>
+  <a href="#how" onclick="toggleMenu()">How it Works</a>
+  <a href="#list" onclick="toggleMenu()">List Your Room</a>
+  <button class="btn btn-outline" onclick="openAuthModal('login');toggleMenu()">Login</button>
+  <button class="btn btn-primary" onclick="openAuthModal('signup');toggleMenu()">Sign Up</button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-badge">🏠 Meerut's #1 Student Room Platform</div>
+  <h1>Find Your Perfect <span class="highlight">Student Room</span> in Meerut</h1>
+  <p>Verified rooms near top colleges. No broker fees. Connect directly with owners in seconds.</p>
+
+  <div class="search-box">
+    <input type="text" placeholder="🔍  Search by area or college..." id="searchInput" oninput="filterRooms()"/>
+    <select id="budgetFilter" onchange="filterRooms()">
+      <option value="">Any Budget</option>
+      <option value="2000">Under ₹2,000</option>
+      <option value="3000">Under ₹3,000</option>
+      <option value="5000">Under ₹5,000</option>
+      <option value="8000">Under ₹8,000</option>
+    </select>
+    <button class="btn btn-primary" onclick="filterRooms()">Search</button>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num" data-target="50">0</div><div class="stat-label">Rooms Listed</div></div>
+    <div class="stat"><div class="stat-num" data-target="200">0</div><div class="stat-label">Students Helped</div></div>
+    <div class="stat"><div class="stat-num" data-target="20">0</div><div class="stat-label">Trusted Owners</div></div>
+  </div>
+</section>
+
+<!-- LISTINGS -->
+<section id="listings">
+  <div class="listings-header">
+    <div>
+      <div class="section-label">Browse</div>
+      <div class="section-title">Available Rooms</div>
+    </div>
+    <div class="filter-tabs">
+      <button class="tab active" onclick="setTab(this,'all')">All</button>
+      <button class="tab" onclick="setTab(this,'single')">Single</button>
+      <button class="tab" onclick="setTab(this,'sharing')">Sharing</button>
+      <button class="tab" onclick="setTab(this,'furnished')">Furnished</button>
+    </div>
+  </div>
+  <div class="rooms-grid" id="roomsGrid">
+    <div class="loading-spinner"><div class="spinner"></div><p>Loading rooms...</p></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="how-section">
+  <div class="section-label">Process</div>
+  <div class="section-title">How RoomNest Works</div>
+  <p class="section-sub">Find a room in 3 simple steps — no broker, no drama.</p>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-icon">🔍</div>
+      <div class="step-title">Browse Listings</div>
+      <div class="step-desc">Search rooms by area, budget, or college proximity.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-icon">💬</div>
+      <div class="step-title">Contact Owner</div>
+      <div class="step-desc">Connect directly via WhatsApp. No broker, no hidden fees.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-icon">🏠</div>
+      <div class="step-title">Move In</div>
+      <div class="step-desc">Visit the room, finalize the deal, and move in!</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <div class="step-icon">⭐</div>
+      <div class="step-title">Leave a Review</div>
+      <div class="step-desc">Help other students by sharing your experience.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ROOMNEST IS BEST  -->
+<section id="why">
+  <div class="section-label">Why Us</div>
+  <div class="section-title">Why Students Choose RoomNest</div>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">🚫</div><div class="why-title">Zero Broker Fee</div><div class="why-desc">Connect directly with owners. Save thousands in commissions.</div></div>
+    <div class="why-card"><div class="why-icon">✅</div><div class="why-title">Verified Listings</div><div class="why-desc">Every listing is manually verified. No fake ads.</div></div>
+    <div class="why-card"><div class="why-icon">⚡</div><div class="why-title">Instant WhatsApp</div><div class="why-desc">One tap and you're talking to the owner directly.</div></div>
+    <div class="why-card"><div class="why-icon">🎓</div><div class="why-title">Student Focused</div><div class="why-desc">Built for students of Meerut. We understand your needs.</div></div>
+  </div>
+</section>
+
+<!-- LIST YOUR ROOM -->
+<section id="list">
+  <div class="section-label">For Owners</div>
+  <div class="section-title">List Your Room</div>
+  <p class="section-sub">Reach hundreds of students looking for rooms near your area.</p>
+
+  <div class="owner-form" id="ownerFormSection">
+    <div class="form-grid" id="listingForm">
+      <div class="form-group">
+        <label>Owner Name *</label>
+        <input type="text" placeholder="Your full name" id="ownerName"/>
+      </div>
+      <div class="form-group">
+        <label>WhatsApp Number *</label>
+        <input type="tel" placeholder="10-digit number" id="ownerPhone" maxlength="10"/>
+      </div>
+      <div class="form-group">
+        <label>Room Title *</label>
+        <input type="text" placeholder="e.g. Spacious Single Room" id="roomTitle"/>
+      </div>
+      <div class="form-group">
+        <label>Area / Locality *</label>
+        <input type="text" placeholder="e.g. Shastri Nagar, Begumpul" id="ownerArea"/>
+      </div>
+      <div class="form-group">
+        <label>Near College</label>
+        <input type="text" placeholder="e.g. Near MIET College" id="ownerNear"/>
+      </div>
+      <div class="form-group">
+        <label>Monthly Rent (₹) *</label>
+        <input type="number" placeholder="e.g. 4500" id="ownerRent"/>
+      </div>
+      <div class="form-group">
+        <label>Room Type *</label>
+        <select id="ownerType">
+          <option value="">Select type</option>
+          <option value="single">Single Room</option>
+          <option value="sharing">Double Sharing</option>
+          <option value="sharing">Triple Sharing</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Furnishing</label>
+        <select id="ownerFurnish">
+          <option value="">Select</option>
+          <option>Furnished</option>
+          <option>Semi-Furnished</option>
+          <option>Unfurnished</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label>Amenities (comma separated)</label>
+        <input type="text" placeholder="WiFi, AC, Geyser, Parking..." id="ownerTags"/>
+      </div>
+      <div class="form-group full">
+        <label>Description</label>
+        <textarea placeholder="Describe your room — nearby colleges, facilities, rules..." id="ownerDesc"></textarea>
+      </div>
+      <div class="form-group form-submit full">
+        <button class="btn btn-primary submit-btn" onclick="submitListing()">🏠 Submit Listing</button>
+      </div>
+      <div class="success-msg" id="successMsg">✅ Listing submitted! We'll review and publish within 24 hours. Thank you!</div>
+      <div class="error-msg" id="errorMsg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER section -->
+<footer>
+  <div>
+    <div class="footer-logo">Room<span>Nest</span></div>
+    <div class="footer-text" style="margin-top:6px">Meerut's student room platform 🏠</div>
+  </div>
+  <div class="footer-links">
+    <a href="#listings">Browse</a>
+    <a href="#how">How it Works</a>
+    <a href="#list">List Room</a>
+  </div>
+  <div class="footer-text">© 2026 RoomNest. Made with ❤️ in Meerut</div>
+</footer>
+
+<!-- ROOM DETAIL MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="authOverlay" onclick="closeAuthOutside(event)">
+  <div class="modal auth-modal" id="authBox">
+    <button class="modal-close" onclick="closeAuth()">✕</button>
+    <div id="authContent"></div>
+  </div>
+</div>
+
+
+<div class="toast" id="toast"></div>
+
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
