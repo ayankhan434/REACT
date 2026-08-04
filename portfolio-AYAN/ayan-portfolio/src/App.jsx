@@ -2,11 +2,12 @@ import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText, ScrollSmoother } from "gsap/all";
 
-import Cursor from "./ui/cursor/Cursor";
+import Cursor from "./ui/Cursor/Cursor";
 import Navbar from "./components/NavBar/Navbar";
 import Hero from "./components/Hero/Hero";
 import WhoAmI from "./components/WhoAmI/WhoAmI";
 import Warp from "./components/Warp/Warp";
+npm;
 import TechStack from "./components/TechStack/TechStack";
 
 import Contact from "./components/Contact/Contact";
