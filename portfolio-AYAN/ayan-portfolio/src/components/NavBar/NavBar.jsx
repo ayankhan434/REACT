@@ -88,8 +88,8 @@ const Navbar = () => {
           <li>
             <a
               className="download-button"
-              href="/assets/files/Ayan-Khan.pdf"
-              download="Ayan-khan__SweResume.pdf"
+              href="/assets/files/Ayan_Khan_Clickable_Resume.pdf"
+              download="/assets/files/Ayan_Khan_Clickable_Resume.pdf"
             >
               RESUME
             </a>
@@ -118,8 +118,8 @@ const Navbar = () => {
         ))}
         <a
           className="download-button"
-          href="/assets/files/Sisvanthkumar_Sathivadivel__SweResume.pdf"
-          download="Sisvanthkumar_Sathivadivel__SweResume.pdf"
+          href="/assets/files/Ayan_Khan_Clickable_Resume.pdf"
+          download="/assets/files/Ayan_Khan_Clickable_Resume.pdf"
         >
           RESUME
         </a>

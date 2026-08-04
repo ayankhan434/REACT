@@ -9,13 +9,11 @@ export default function Cursor() {
   useEffect(() => {
     if (!dotRef.current || !glowRef.current) return;
 
-    // Center both cursor elements on pointer got it
     gsap.set([dotRef.current, glowRef.current], {
       xPercent: -50,
       yPercent: -50,
     });
 
-    // Fast dot movement (on mooving the mouse)
     const moveDotX = gsap.quickTo(dotRef.current, "x", {
       duration: 0.15,
       ease: "power3.out",

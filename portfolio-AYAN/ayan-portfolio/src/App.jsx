@@ -8,7 +8,7 @@ import Hero from "./components/Hero/Hero";
 import WhoAmI from "./components/WhoAmI/WhoAmI";
 import Warp from "./components/Warp/Warp";
 import TechStack from "./components/TechStack/TechStack";
-import Projects from "./components/Projects/Projects";
+
 import Contact from "./components/Contact/Contact";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, ScrollSmoother);
