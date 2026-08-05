@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import "./Warp.scss";
+import "./warp.scss";
 export default function WarpSpeed() {
   const canvasRef = useRef(null);
   const rafRef = useRef(0);

@@ -45,9 +45,10 @@
 }
 
 .whoami-image {
-  width: 32%;
-  height: auto;                 
+  width: 39%;
+  height: 120%;                 
   aspect-ratio: 3 / 4;         
+  object-fit: cover;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -86,8 +87,8 @@
   }
 
   .whoami-image {
-    width: min(320px, 90%);
-    aspect-ratio: 4 / 5;
+    width: min(500px, 100%);
+    aspect-ratio: 3 / 5;
   }
 }
 

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./WhoAmi.scss";
+import "./WhoAmI.scss";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,7 +10,7 @@ import { aboutmeDescription } from "../../constants/aboutmeConstants";
 gsap.registerPlugin(ScrollTrigger);
 
 /**
- * @author Sisvanthkumar Sathivadivel
+ * @author Sisvanthkumar Sathivadivel         thanks for making such a wonderfull portfolio love from ayan
  * @returns WhoAmI component that introduces the portfolio owner with a description and an image. The description text animates into view word by word as the user scrolls, creating an engaging introduction to the portfolio. The component uses GSAP for scroll-triggered animations and SplitType for splitting the text into words for individual animation control.
  */
 const WhoAmI = () => {
@@ -29,7 +29,6 @@ const WhoAmI = () => {
         tagName: "span",
       });
 
-      // Force initial state RIGHT NOW
       gsap.set(split.words, { opacity: 0.15, yPercent: 20 });
 
       const tween = gsap.to(split.words, {
@@ -71,7 +70,7 @@ const WhoAmI = () => {
             {aboutmeDescription}
           </p>
           <img
-            src="https://images.unsplash.com/photo-1601392561050-340745ba9c25?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fHN0dWRlbnR8ZW58MHx8MHx8fDA%3D"
+            src="..\public\assets\images\common\caricature.png.jpeg"
             alt="whoami"
             className="whoami-image"
           />
