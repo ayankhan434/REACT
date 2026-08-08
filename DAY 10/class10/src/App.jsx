@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Card from "./components/Card";
+import { useState } from "react";
 
 const App = () => {
   const [userName, setUserName] = useState("");
@@ -7,12 +6,20 @@ const App = () => {
   const [imageURL, setImageURL] = useState("");
   const [userDesc, setUserDesc] = useState("");
 
-  const [allUsers, setAllUsers] = useState([]);
+  const localData = JSON.parse(localStorage.getItem("all-users")) || [];
+
+  const [allUsers, setAllUsers] = useState(localData);
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    setAllUsers([...allUsers, { userName, userRole, userDesc, imageURL }]);
+    const oldUsers = [...allUsers];
+    console.log(oldUsers);
+
+    oldUsers.push({ userName, userRole, userDesc, imageURL });
+
+    setAllUsers(oldUsers);
+    localStorage.setItem("all-users", JSON.stringify(oldUsers));
 
     setUserName("");
     setUserRole("");
@@ -23,9 +30,16 @@ const App = () => {
   const deleteHandler = (idx) => {
     const copyUsers = [...allUsers];
 
-    copyUsers.splice(idx, 1);
+    const conf = confirm("Are you really want to delete this element?");
+
+    if (conf) {
+      copyUsers.splice(idx, 1);
+    } else {
+      alert("element Not Deleted");
+    }
 
     setAllUsers(copyUsers);
+    localStorage.setItem("all-users", JSON.stringify(copyUsers));
   };
 
   return (
@@ -82,7 +96,33 @@ const App = () => {
       </form>
       <div className="px-4 py-10 gap-4 flex flex-wrap">
         {allUsers.map(function (elem, idx) {
-          return <Card idx={idx} elem={elem} deleteHandler={deleteHandler} />;
+          return (
+            <div
+              key={idx}
+              className="lg:w-[23vw] md:w-[30vw] sm:w-[45vw] rounded-xl py-8 px-8 flex items-center flex-col text-center bg-white text-black"
+            >
+              <img
+                className="h-24 w-24 rounded-full object-center object-cover"
+                src={elem.imageURL}
+                alt=""
+              />
+              <h1 className="text-2xl mt-2 font-bold">{elem.userName}</h1>
+              <h5 className=" text-blue-500 text-lg font-semibold my-2">
+                {elem.userRole}
+              </h5>
+              <p className="text-sm font-medium leading-tight">
+                {elem.userDesc}
+              </p>
+              <button
+                onClick={() => {
+                  deleteHandler(idx);
+                }}
+                className="px-4 py-2 rounded text-xs cursor-pointer active:scale-95 bg-red-600 text-white font-semibold mt-3"
+              >
+                Remove
+              </button>
+            </div>
+          );
         })}
       </div>
     </div>
