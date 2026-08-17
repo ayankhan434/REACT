@@ -1,0 +1,13 @@
+*{
+  margin: 10;
+  padding: 10;
+}
+button{
+  padding: 15px;
+  
+  height: 50px;
+  width: 125px;
+  background: #ff5f5f;
+  color: aqua;
+  border-radius: 5px;
+}
