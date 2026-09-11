@@ -70,7 +70,7 @@ const WhoAmI = () => {
             {aboutmeDescription}
           </p>
           <img
-            src="..\public\assets\images\common\caricature.png.jpeg"
+            src="..\assets\images\common\caricature.png.jpeg"
             alt="whoami"
             className="whoami-image"
           />

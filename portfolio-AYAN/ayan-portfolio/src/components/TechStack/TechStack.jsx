@@ -81,10 +81,6 @@ const TECH_ICONS = {
 
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 
-/**
- * @author Sisvanthkumar Sathivadivel
- * @returns TechStack component that creates an interactive 3D showcase of technologies. As the user scrolls, they navigate through a virtual space filled with tech cards and stars. The cards display technology names, icons, and metadata, while the stars create a dynamic background. The component uses GSAP for smooth animations and ScrollTrigger for scroll-based interactions, creating an engaging way to present the tech stack.
- */
 export default function TechStack() {
   const sectionRef = useRef(null);
   const viewportRef = useRef(null);

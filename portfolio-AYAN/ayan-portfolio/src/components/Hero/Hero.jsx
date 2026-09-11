@@ -39,7 +39,7 @@ const Hero = () => {
           return;
         }
 
-        // tune these per screen so it feels consistent
+        
         const scaleTo = mobile ? 6 : tablet ? 8 : 10;
         const endDist = short ? "+=55%" : mobile ? "+=70%" : "+=80%";
 
@@ -57,7 +57,7 @@ const Hero = () => {
           },
         });
 
-        // make sure we start clean when switching breakpoints
+        
         gsap.set(zoomEl, { scale: 1, opacity: 1, force3D: true });
 
         tl.to(zoomEl, { scale: scaleTo, opacity: 0 });
